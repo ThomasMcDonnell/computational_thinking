@@ -1,7 +1,7 @@
 # computational_thinking
 
 ## Optimization problems
----
+
 #### 0/1 Knapsack Problem 
 Given a set of items, each with a weight and a value, determine the number of each item to include in a collection so that the total weight is less than or equal to a given limit and the total value is as large as possible.
 ###### Representation 
@@ -23,4 +23,23 @@ best items.
 
 Upon implementation you will note that the algorithm will produce different answers depending on the definition of best. The reason for this is that a sequence of locally "optimal" choices don't always yield an optimal solution. 
 * There is no way to tell which "best" will yield the more optimal solution.
-* You get an answer, but you don't always know weather it is the optimal solution. 
+* You get an answer, but you don't always know weather it is the optimal solution.
+
+---
+
+#### Brute Force Algorithm
+---
+A very simple way of ensuring you always get the most optimal solution is to explore all possible solutions and choose the best one. But what does that implementation look like ?
+###### Search Tree 
+Here the tree is built top down starting with the root. We select the first element from the items that are still to be considered. 
+* if there is room for that item in the knapsack a node is constructed that reflects the consequence of of taking that item, this is represented as the left child. 
+* We also explore the consequences of not taking that item, this is represented as the right child. 
+
+This process is then recursively applied to non-left children and we choose the node with the higest value that meets the given constraints. (left-first, depth-first enumeration)
+###### Computational Complexity of Search Tree
+Time is based on the number of nodes generated. The number of levels is the number of items to choose from. Number of nodes at level i is 2^i, so if there are n items the number of nodes is 
+
+   \sum_{i=0}^{i=10} 2^i
+
+
+
