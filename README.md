@@ -10,6 +10,7 @@ Given a set of items, each with a weight and a value, determine the number of ea
 3. An array, B, of lenght n, is used to indicate whether or not an item has been taken.
 
    => if B[i] = 1, item A[i] is taken.
+
    => if B[i] = 0, item A[i] is not taken.
 
 #### Greedy Algorithm O(nlogn)
