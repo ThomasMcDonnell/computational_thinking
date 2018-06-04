@@ -39,7 +39,11 @@ This process is then recursively applied to non-left children and we choose the 
 ###### Computational Complexity of Search Tree
 Time is based on the number of nodes generated. The number of levels is the number of items to choose from. Number of nodes at level i is 2^i, so if there are n items the number of nodes is 
 
-   \sum_{i=0}^{i=10} 2^i
+  O(2^i+1) => Exponential Growth 
+
+> An obvious optimization here would be to ignore those parts of the tree which violate the constraint. This does not however change the time complexity. 
+
+
 
 
 
