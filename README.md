@@ -30,7 +30,7 @@ Upon implementation you will note that the algorithm will produce different answ
 #### Brute Force Algorithm
 ---
 A very simple way of ensuring you always get the most optimal solution is to explore all possible solutions and choose the best one. But what does that implementation look like ?
-###### Search Tree 
+#### Search Tree 
 Here the tree is built top down starting with the root. We select the first element from the items that are still to be considered. 
 * if there is room for that item in the knapsack a node is constructed that reflects the consequence of of taking that item, this is represented as the left child. 
 * We also explore the consequences of not taking that item, this is represented as the right child. 
@@ -43,7 +43,19 @@ Time is based on the number of nodes generated. The number of levels is the numb
 
 > An obvious optimization here would be to ignore those parts of the tree which violate the constraint. This does not however change the time complexity. 
 
+An obvious question here, is there anyway around the exponential time complexity ? 
 
+###### Dynamic Programming 
+There are two criteria that must be satisfied before we can employ the use of dynammic programming.
+* Optimal Substructure: 
+   A globally optimal solution can be found by combining optimal solutions to local subproblems.
+* Overlapping Subproblems: 
+   Finding an optimal solution involves solving the same problem multiple times. 
 
+Can we use dynammic programing in the Knapsack problem ? 
+> do we have optimal substructure ?
+YES
+> do we have overlapping subproblems ? 
+DEPENDS
 
 
