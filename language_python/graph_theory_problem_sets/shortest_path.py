@@ -1,6 +1,8 @@
 from graph_models import *
+from depth_first_search import *
 
-def buildCityGraph(graphType):
+
+def build_city_graph(graphType):
     g = graphType()
     for name in ('Boston', 'Providence', 'New York', 'Chicago',
                  'Denver', 'Phoenix', 'Los Angeles'):           # Create 7 nodes
@@ -16,5 +18,20 @@ def buildCityGraph(graphType):
     g.add_edge(Edge(g.get_node('Los Angeles'), g.get_node('Boston')))
     return g
 
-print(buildCityGraph(Graph))
+
+def test_shortest_path(source, destination):
+    g = build_city_graph(Digraph)
+    shortest = shortestPath(g, g.get_node(source), g.get_node(destination),
+                             _print=True)
+    if shortest != None:
+        print(f'Shortest path from {source} to {destination} is ',
+             print_path(shortest))
+    else:
+        print(f'There is no path from {source} to {destination}')
+
+
+if __name__ == '__main__':
+    #test_shortest_path('Chicago', 'Boston')
+    test_shortest_path('Boston', 'Phoenix')
+
 
