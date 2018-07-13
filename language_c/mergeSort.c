@@ -13,7 +13,7 @@ void divide(int * arr, int len_arr)
     }else {
         int mid = len_arr//2;
         
-        left = 
+        left =  
     }
 }
 
